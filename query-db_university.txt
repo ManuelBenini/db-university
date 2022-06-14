@@ -13,9 +13,7 @@ WHERE `cfu` > 10;
 3.
 SELECT *
 FROM `students`
-WHERE YEAR(CURDATE()) - YEAR(`date_of_birth`) > 30
-AND MONTH(`date_of_birth`) <= MONTH(CURDATE())
-AND DAY(`date_of_birth`) <= DAY(CURDATE());
+WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), "%y") > 30;
 
 
 4.
