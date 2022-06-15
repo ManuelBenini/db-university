@@ -41,4 +41,10 @@ JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
 WHERE `departments`.`name` = 'Dipartimento di Matematica';
 
 7.
+SELECT `students`.`name` AS `nome_studente`, `students`.`surname` AS `cognome_studente`, `exams`.`id` AS `esame`, COUNT(*) AS `numero_tentativi`
+FROM `students`
+JOIN `exam_student` ON `student_id` = `students`.`id`
+JOIN `exams` ON `exams`.`id` = `exam_student`.`exam_id`
+GROUP BY `esame`, `nome_studente`, `cognome_studente`
+ORDER BY `nome_studente`;
 
