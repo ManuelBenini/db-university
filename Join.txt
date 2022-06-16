@@ -8,7 +8,7 @@ WHERE `degrees`.`name` = 'Corso di laurea in Economia';
 SELECT `degrees`.`id`, `degrees`.`name` AS `nome_corso_laurea`, `departments`.`name` AS `nome_dipartimento`
 FROM `degrees`
 JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
-WHERE `departments`.`name` LIKE '%Neuroscienze';
+WHERE `departments`.`name` LIKE 'Dipartimento di Neuroscienze';
 
 3.
 SELECT `teachers`.`name`, `teachers`.`surname`, `courses`.`name` AS `nomi_corsi`
